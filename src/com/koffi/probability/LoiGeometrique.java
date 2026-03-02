@@ -9,6 +9,8 @@ public class LoiGeometrique {
     double esperance;
     double variance;
     double eventprob;
+    double probCummule;
+    int nbessaieCumulle;
 
     public LoiGeometrique(double probreu, int nbessaie) {
 
@@ -37,6 +39,15 @@ public class LoiGeometrique {
         variance = ((probEchec) / Math.pow(probabiblieSucces, 2));
 
         return variance;
+    }
+
+    public double eventCummulue(int essaiecumule) {
+
+        this.nbessaieCumulle = essaiecumule;
+
+        probCummule = 1 - (Math.pow(probEchec, nbessaieCumulle));
+
+        return probCummule;
     }
 
 
