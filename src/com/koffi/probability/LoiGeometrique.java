@@ -17,11 +17,12 @@ public class LoiGeometrique {
         this.probabiblieSucces = probreu;
         this.nbessaie = nbessaie;
         probEchec = 1 - probabiblieSucces;
-        nbechec=nbessaie-1;
+
     }
 
-    public double event() {
+    public double event(int nbechec) {
 
+        this.nbechec=nbechec;
         eventprob = (Math.pow(probEchec, nbechec) * probabiblieSucces);
 
         return eventprob;
