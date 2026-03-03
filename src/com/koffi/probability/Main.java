@@ -10,16 +10,20 @@ public static void main(String[] args) {
 
     Scanner input = new Scanner(System.in);
     int choixUtilisateur;
-    System.out.println("Bonjour veuiller choisir une valeur entre 1 a 4. \n 1-Loi " +
+    /*System.out.println("Bonjour veuiller choisir une valeur entre 1 a 4. \n 1-Loi " +
             "Binominale" + "\n 2-Loi de Poisson " + "\n 3-Loi Geometrique" +
             "\n 4-Loi Normale");
 
-    choixUtilisateur = input.nextInt();
+    choixUtilisateur = input.nextInt();*/
 
 
     do {
 
-        System.out.println("Veuiller entrer un choix valide svp");
+        System.out.println("Bonjour, veuillez choisir une valeur entre 1 et 4 :");
+        System.out.println("1 - Loi Binomiale");
+        System.out.println("2 - Loi de Poisson");
+        System.out.println("3 - Loi Géométrique");
+        System.out.println("4 - Loi Normale");
         choixUtilisateur = input.nextInt();
 
     } while (choixUtilisateur < 1 || choixUtilisateur > 4);
