@@ -3,6 +3,7 @@ import com.koffi.probability.LoiDePoisson;
 import com.koffi.probability.LoiGeometrique;
 import com.koffi.probability.LoiNormale;
 
+import javax.sound.midi.SysexMessage;
 import java.util.Scanner;
 
 
@@ -66,11 +67,22 @@ public static void main(String[] args) {
 
     } else if (choixUtilisateur == 4) {
 
-        LoiNormale loi2 = new LoiNormale(23, 6, 6);
+        double moyenne;
+        double ecartType;
+        double value;
+
+
+        System.out.println("Veuiller entrer une valeur de moyenne de votre choix");
+        moyenne = input.nextDouble();
+        System.out.println("Veuiller entrer une valeur d<ecart type de votre choix");
+        ecartType = input.nextDouble();
+        System.out.println("Veuiller entrer une valeur de votre choix ");
+        value = input.nextDouble();
+
+        LoiNormale loi2 = new LoiNormale(moyenne, ecartType, value);
         System.out.println(loi2.fonctionLoiNormale());
 
     }
-    
 
 
 }
