@@ -48,22 +48,17 @@ public static void main(String[] args) {
         binomiale.varianceBinomiale();
         System.out.println(binomiale.valeurdeprobBinomiale());
 
-        System.out.print("Vouliez voir l'esperance de vos données choisit ? ");
+        System.out.print("Vouliez voir l'esperance et de la variance de vos données " +
+                "choisit ?  ");
+        input.nextLine();
         choix = input.nextLine();
 
         if (choix.equals("oui")) {
 
-            System.out.println(binomiale.esperancebBinomiale());
+            System.out.println(binomiale.esperancebBinomiale()+" " + "et" + " " + binomiale.varianceBinomiale());
+            //  System.out.println(binomiale.varianceBinomiale());
         }
 
-        System.out.print("Vouliez voir la variance de vos données choisit ? ");
-        choix = input.nextLine();
-
-        if (choix.equals("oui")) {
-
-            System.out.println(binomiale.varianceBinomiale());
-
-        }
 
     } else if (choixUtilisateur == 2) {
 
@@ -85,9 +80,11 @@ public static void main(String[] args) {
         System.out.println(poisson.getVariance());
 
     } else if (choixUtilisateur == 3) {
+
         /*int nbEchec=0;
         System.out.println("Combien d'échec vous vouliez ?");
         nbEchec=input.nextInt();*/
+
         LoiGeometrique loi = new LoiGeometrique(0.34, 9);
 
         loi.esperanceGeometrique();
