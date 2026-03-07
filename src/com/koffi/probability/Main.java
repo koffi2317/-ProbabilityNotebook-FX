@@ -11,12 +11,6 @@ public static void main(String[] args) {
 
     Scanner input = new Scanner(System.in);
     int choixUtilisateur;
-    /*System.out.println("Bonjour veuiller choisir une valeur entre 1 a 4. \n 1-Loi " +
-            "Binominale" + "\n 2-Loi de Poisson " + "\n 3-Loi Geometrique" +
-            "\n 4-Loi Normale");
-
-    choixUtilisateur = input.nextInt();*/
-
 
     do {
 
@@ -42,7 +36,15 @@ public static void main(String[] args) {
 
     } else if (choixUtilisateur == 2) {
 
-        LoiDePoisson poisson = new LoiDePoisson(9.54, 23);
+        double lambda;
+        int nbOccurence;
+
+        System.out.println("Veuiller entrer une valeur de lambda de votre choix");
+        lambda=input.nextDouble();
+        System.out.println("Veuiller entrer le nombre d'occurence de votre choix");
+        nbOccurence=input.nextInt();
+
+        LoiDePoisson poisson = new LoiDePoisson(lambda, nbOccurence);
         poisson.occurenceFactorielle();
         poisson.esperance();
         poisson.getVariance();
