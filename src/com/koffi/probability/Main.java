@@ -25,14 +25,45 @@ public static void main(String[] args) {
 
 
     if (choixUtilisateur == 1) {
-        LoiBinomiale binomiale = new LoiBinomiale(5, 2, 0.67);
+        String choix;
+        double probaSucces;
+        int nbEpreuve;
+        int nbSucces;
+
+        System.out.println("C'est quoi la probabilite de succes que vous vouliez pour " +
+                "cette loi");
+        probaSucces = input.nextDouble();
+        System.out.println("C'est quoi le nombre d'epreuve vous vouliez faire appliquer" +
+                " a cette loi binominale");
+        nbEpreuve = input.nextInt();
+        System.out.println("C'est quoi le nombre de succes désiré sur le nombre " +
+                "d'epreuve?");
+        nbSucces = input.nextInt();
+
+
+        LoiBinomiale binomiale = new LoiBinomiale(nbEpreuve, nbSucces, probaSucces);
         binomiale.valeurCoefficientBinomial();
         binomiale.valeurPobetEchec();
         binomiale.esperancebBinomiale();
         binomiale.varianceBinomiale();
         System.out.println(binomiale.valeurdeprobBinomiale());
-        System.out.println(binomiale.esperancebBinomiale());
-        System.out.println(binomiale.varianceBinomiale());
+
+        System.out.print("Vouliez voir l'esperance de vos données choisit ? ");
+        choix = input.nextLine();
+
+        if (choix.equals("oui")) {
+
+            System.out.println(binomiale.esperancebBinomiale());
+        }
+
+        System.out.print("Vouliez voir la variance de vos données choisit ? ");
+        choix = input.nextLine();
+
+        if (choix.equals("oui")) {
+
+            System.out.println(binomiale.varianceBinomiale());
+
+        }
 
     } else if (choixUtilisateur == 2) {
 
@@ -40,9 +71,9 @@ public static void main(String[] args) {
         int nbOccurence;
 
         System.out.println("Veuiller entrer une valeur de lambda de votre choix");
-        lambda=input.nextDouble();
+        lambda = input.nextDouble();
         System.out.println("Veuiller entrer le nombre d'occurence de votre choix");
-        nbOccurence=input.nextInt();
+        nbOccurence = input.nextInt();
 
         LoiDePoisson poisson = new LoiDePoisson(lambda, nbOccurence);
         poisson.occurenceFactorielle();
