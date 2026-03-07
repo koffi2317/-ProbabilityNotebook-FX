@@ -33,16 +33,37 @@ public static void main(String[] args) {
         LoiBinomiale binomiale = new LoiBinomiale(5, 2, 0.67);
         binomiale.valeurCoefficientBinomial();
         binomiale.valeurPobetEchec();
+        binomiale.esperancebBinomiale();
+        binomiale.varianceBinomiale();
         System.out.println(binomiale.valeurdeprobBinomiale());
+        System.out.println(binomiale.esperancebBinomiale());
+        System.out.println(binomiale.varianceBinomiale());
+
     } else if (choixUtilisateur == 2) {
 
         LoiDePoisson poisson = new LoiDePoisson(9.54, 23);
         poisson.occurenceFactorielle();
-        System.out.println(poisson.probdeEvent());
-    } else if (choixUtilisateur == 3) {
+        poisson.esperance();
+        poisson.getVariance();
 
+        System.out.println(poisson.probdeEvent());
+        System.out.println(poisson.esperance());
+        System.out.println(poisson.getVariance());
+
+    } else if (choixUtilisateur == 3) {
+        /*int nbEchec=0;
+        System.out.println("Combien d'échec vous vouliez ?");
+        nbEchec=input.nextInt();*/
         LoiGeometrique loi = new LoiGeometrique(0.34, 9);
+
+        loi.esperanceGeometrique();
+        loi.varianceGeometrique();
+
         System.out.println(loi.event(8));
+        System.out.println(loi.esperanceGeometrique());
+        System.out.println(loi.varianceGeometrique());
+
+
     } else if (choixUtilisateur == 4) {
 
         LoiNormale loi2 = new LoiNormale(23, 6, 6);
