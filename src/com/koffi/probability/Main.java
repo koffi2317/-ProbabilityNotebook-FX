@@ -48,7 +48,7 @@ public static void main(String[] args) {
         binomiale.varianceBinomiale();
         System.out.println(binomiale.valeurdeprobBinomiale());
 
-        System.out.print("Vouliez voir l'esperance et de la variance de vos données " +
+        System.out.print("Vouliez voir l'esperance et la variance de vos données " +
                 "choisit ?  ");
         input.nextLine();
         choix = input.nextLine();
