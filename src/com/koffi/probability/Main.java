@@ -55,7 +55,7 @@ public static void main(String[] args) {
 
         if (choix.equals("oui")) {
 
-            System.out.println(binomiale.esperancebBinomiale()+" " + "et" + " " + binomiale.varianceBinomiale());
+            System.out.println(binomiale.esperancebBinomiale() + " " + "et" + " " + binomiale.varianceBinomiale());
             //  System.out.println(binomiale.varianceBinomiale());
         }
 
@@ -80,7 +80,8 @@ public static void main(String[] args) {
         System.out.println(poisson.getVariance());
 
     } else if (choixUtilisateur == 3) {
-
+        int valeur = 0;
+        String choix;
         /*int nbEchec=0;
         System.out.println("Combien d'échec vous vouliez ?");
         nbEchec=input.nextInt();*/
@@ -92,7 +93,23 @@ public static void main(String[] args) {
 
         System.out.println(loi.event(8));
         System.out.println(loi.esperanceGeometrique());
+
+
         System.out.println(loi.varianceGeometrique());
+
+        System.out.println("Voulez vous trouver la probabilité d'un évenement de votre " +
+                "choix ? ");
+        input.nextLine();
+        choix = input.nextLine();
+
+        if (Objects.equals(choix, "oui")) {
+
+            System.out.println("Veuiller entrer le nombre d'essaie minimum avant " +
+                    "d'Avoir une reussite ?");
+            valeur = input.nextInt();
+            System.out.println(loi.eventCummulue(valeur));
+
+        }
 
 
     } else if (choixUtilisateur == 4) {
