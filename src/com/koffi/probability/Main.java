@@ -65,21 +65,19 @@ public static void main(String[] args) {
         double lambda;
         int nbOccurence;
 
-        System.out.println("Veuiller entrer une valeur de lambda de votre choix");
+        System.out.println("Veuillez entrer une valeur de lambda :");
         lambda = input.nextDouble();
-        System.out.println("Veuiller entrer le nombre d'occurence de votre choix");
+
+        System.out.println("Veuillez entrer le nombre d'occurrences :");
         nbOccurence = input.nextInt();
 
         LoiDePoisson poisson = new LoiDePoisson(lambda, nbOccurence);
-        poisson.occurenceFactorielle();
-        poisson.esperance();
-        poisson.getVariance();
 
-        System.out.println(poisson.probdeEvent());
-        System.out.println(poisson.esperance());
-        System.out.println(poisson.getVariance());
-
-    } else if (choixUtilisateur == 3) {
+        System.out.println("Probabilité : " + poisson.probDeEvent());
+        System.out.println("Espérance : " + poisson.esperance());
+        System.out.println("Variance : " + poisson.variance());
+    }
+    else if (choixUtilisateur == 3) {
         int valeur = 0;
         String choix;
         /*int nbEchec=0;

@@ -2,44 +2,31 @@ package com.koffi.probability;
 
 public class LoiDePoisson {
 
-    double esperance = 0;
-    double variance = 0;
-    double probabiblite = 0;
-    int nbOccurence = 0;
-    double lambda = 0;
-    int nboccutempo = 0;
-
+    private final double lambda;
+    private final int k;
 
     public LoiDePoisson(double lambda, int occurence) {
         this.lambda = lambda;
-        this.nbOccurence = occurence;
-        nboccutempo = nbOccurence;
+        this.k = occurence;
     }
 
-    public void occurenceFactorielle() {
-
-        for (int i = (nbOccurence - 1); i >= 1; i--) {
-
-            nbOccurence *= i;
+    private long factorielle(int n) {
+        long f = 1;
+        for (int i = 2; i <= n; i++) {
+            f *= i;
         }
-
+        return f;
     }
 
-    public double probdeEvent() {
-
-        probabiblite = ((Math.exp(-1 * lambda)) * (Math.pow(lambda, nboccutempo))) / (nbOccurence);
-
-        return probabiblite;
+    public double probDeEvent() {
+        return (Math.exp(-lambda) * Math.pow(lambda, k)) / factorielle(k);
     }
 
     public double esperance() {
-
-        return esperance = lambda;
+        return lambda;
     }
 
-    public double getVariance() {
-
-        return variance = lambda;
+    public double variance() {
+        return lambda;
     }
-
 }
