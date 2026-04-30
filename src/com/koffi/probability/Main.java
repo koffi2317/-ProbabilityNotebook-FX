@@ -25,38 +25,35 @@ public static void main(String[] args) {
 
 
     if (choixUtilisateur == 1) {
+
         String choix;
         double probaSucces;
         int nbEpreuve;
         int nbSucces;
 
-        System.out.println("C'est quoi la probabilite de succes que vous vouliez pour " +
-                "cette loi");
+        System.out.println("C'est quoi la probabilite de succes que vous vouliez pour cette loi ?");
         probaSucces = input.nextDouble();
-        System.out.println("C'est quoi le nombre d'epreuve vous vouliez faire appliquer" +
-                " a cette loi binominale");
+
+        System.out.println("C'est quoi le nombre d'epreuves que vous vouliez appliquer à cette loi binomiale ?");
         nbEpreuve = input.nextInt();
-        System.out.println("C'est quoi le nombre de succes désiré sur le nombre " +
-                "d'epreuve?");
+
+        System.out.println("C'est quoi le nombre de succes désiré sur le nombre d'epreuves ?");
         nbSucces = input.nextInt();
 
+        // --- Version correcte de la classe LoiBinomiale ---
+         LoiBinomiale binomiale = new LoiBinomiale(nbEpreuve, nbSucces, probaSucces);
 
-        LoiBinomiale binomiale = new LoiBinomiale(nbEpreuve, nbSucces, probaSucces);
-        binomiale.valeurCoefficientBinomial();
-        binomiale.valeurPobetEchec();
-        binomiale.esperancebBinomiale();
-        binomiale.varianceBinomiale();
-        System.out.println(binomiale.valeurdeprobBinomiale());
+        // Probabilité exacte
+        System.out.println("La probabilité est : " + binomiale.prob());
 
-        System.out.print("Vouliez voir l'esperance et la variance de vos données " +
-                "choisit ?  ");
-        input.nextLine();
+        // Lecture du choix utilisateur
+        System.out.print("Vouliez-vous voir l'espérance et la variance de vos données choisies ?  ");
+        input.nextLine(); // consomme le \n
         choix = input.nextLine();
 
-        if (choix.equals("oui")) {
-
-            System.out.println(binomiale.esperancebBinomiale() + " " + "et" + " " + binomiale.varianceBinomiale());
-            //  System.out.println(binomiale.varianceBinomiale());
+        if (choix.equalsIgnoreCase("oui")) {
+            System.out.println("Espérance : " + binomiale.esperance());
+            System.out.println("Variance : " + binomiale.variance());
         }
 
 
