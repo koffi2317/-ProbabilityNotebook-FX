@@ -29,7 +29,7 @@ public class LoiNormale {
         return cdfStandardisee(zScore());
     }
 
-   
+
     private double cdfStandardisee(double z) {
         double t = 1 / (1 + 0.2316419 * Math.abs(z));
         double d = 0.3989423 * Math.exp(-z * z / 2);

@@ -41,7 +41,7 @@ public static void main(String[] args) {
         nbSucces = input.nextInt();
 
         // --- Version correcte de la classe LoiBinomiale ---
-         LoiBinomiale binomiale = new LoiBinomiale(nbEpreuve, nbSucces, probaSucces);
+        LoiBinomiale binomiale = new LoiBinomiale(nbEpreuve, nbSucces, probaSucces);
 
         // Probabilité exacte
         System.out.println("La probabilité est : " + binomiale.prob());
@@ -123,17 +123,20 @@ public static void main(String[] args) {
             double ecartType;
             double value;
 
-
-            System.out.println("Veuiller entrer une valeur de moyenne de votre choix");
+            System.out.println("Veuillez entrer une valeur de moyenne de votre choix :");
             moyenne = input.nextDouble();
-            System.out.println("Veuiller entrer une valeur d<ecart type de votre choix");
+
+            System.out.println("Veuillez entrer une valeur d'écart type de votre choix :");
             ecartType = input.nextDouble();
-            System.out.println("Veuiller entrer une valeur de votre choix ");
+
+            System.out.println("Veuillez entrer une valeur x pour laquelle vous voulez calculer la probabilité cumulée :");
             value = input.nextDouble();
 
-            LoiNormale loi2 = new LoiNormale(moyenne, ecartType, value);
-            System.out.println(loi2.fonctionLoiNormale());
 
+            LoiNormale loi2 = new LoiNormale(moyenne, ecartType, value);
+
+
+            System.out.println("La probabilité cumulée P(X ≤ x) est : " + loi2.cdf());
         }
 
 
