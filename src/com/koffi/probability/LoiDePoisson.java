@@ -29,4 +29,17 @@ public class LoiDePoisson {
     public double variance() {
         return lambda;
     }
+
+    public double cdf() {
+        double sum = 0;
+        for (int i = 0; i <= k; i++) {
+            sum += Math.pow(lambda, i) / factorielle(i);
+        }
+        return Math.exp(-lambda) * sum;
+    }
+
+
+
+
+
 }

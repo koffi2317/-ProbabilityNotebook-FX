@@ -64,7 +64,7 @@ public static void main(String[] args) {
 
         double lambda;
         int nbOccurence;
-
+        String choixPoisson;
         System.out.println("Veuillez entrer une valeur de lambda :");
         lambda = input.nextDouble();
 
@@ -76,58 +76,69 @@ public static void main(String[] args) {
         System.out.println("Probabilité : " + poisson.probDeEvent());
         System.out.println("Espérance : " + poisson.esperance());
         System.out.println("Variance : " + poisson.variance());
-    }
-    else if (choixUtilisateur == 3) {
-        int valeur = 0;
-        String choix;
+
+        System.out.println("Veuiller vous voir la probabilité cumulé de celle-ci ?");
+
+        input.nextLine();
+        choixPoisson = input.nextLine();
+
+
+        if (choixPoisson.equals("oui")) {
+
+            System.out.println("La probabilité cumulé de " + nbOccurence + " est egal à " + poisson.cdf());
+
+        } else if (choixUtilisateur == 3) {
+            int valeur = 0;
+            String choix;
         /*int nbEchec=0;
         System.out.println("Combien d'échec vous vouliez ?");
         nbEchec=input.nextInt();*/
 
-        LoiGeometrique loi = new LoiGeometrique(0.34, 9);
+            LoiGeometrique loi = new LoiGeometrique(0.34, 9);
 
-        loi.esperanceGeometrique();
-        loi.varianceGeometrique();
+            loi.esperanceGeometrique();
+            loi.varianceGeometrique();
 
-        System.out.println(loi.event(8));
-        System.out.println(loi.esperanceGeometrique());
+            System.out.println(loi.event(8));
+            System.out.println(loi.esperanceGeometrique());
 
 
-        System.out.println(loi.varianceGeometrique());
+            System.out.println(loi.varianceGeometrique());
 
-        System.out.println("Voulez vous trouver la probabilité d'un évenement de votre " +
-                "choix ? ");
-        input.nextLine();
-        choix = input.nextLine();
+            System.out.println("Voulez vous trouver la probabilité d'un évenement de votre " +
+                    "choix ? ");
+            input.nextLine();
+            choix = input.nextLine();
 
-        if (Objects.equals(choix, "oui")) {
+            if (Objects.equals(choix, "oui")) {
 
-            System.out.println("Veuiller entrer le nombre d'essaie minimum avant " +
-                    "d'Avoir une reussite ?");
-            valeur = input.nextInt();
-            System.out.println(loi.eventCummulue(valeur));
+                System.out.println("Veuiller entrer le nombre d'essaie minimum avant " +
+                        "d'Avoir une reussite ?");
+                valeur = input.nextInt();
+                System.out.println(loi.eventCummulue(valeur));
+
+            }
+
+
+        } else if (choixUtilisateur == 4) {
+
+            double moyenne;
+            double ecartType;
+            double value;
+
+
+            System.out.println("Veuiller entrer une valeur de moyenne de votre choix");
+            moyenne = input.nextDouble();
+            System.out.println("Veuiller entrer une valeur d<ecart type de votre choix");
+            ecartType = input.nextDouble();
+            System.out.println("Veuiller entrer une valeur de votre choix ");
+            value = input.nextDouble();
+
+            LoiNormale loi2 = new LoiNormale(moyenne, ecartType, value);
+            System.out.println(loi2.fonctionLoiNormale());
 
         }
 
 
-    } else if (choixUtilisateur == 4) {
-
-        double moyenne;
-        double ecartType;
-        double value;
-
-
-        System.out.println("Veuiller entrer une valeur de moyenne de votre choix");
-        moyenne = input.nextDouble();
-        System.out.println("Veuiller entrer une valeur d<ecart type de votre choix");
-        ecartType = input.nextDouble();
-        System.out.println("Veuiller entrer une valeur de votre choix ");
-        value = input.nextDouble();
-
-        LoiNormale loi2 = new LoiNormale(moyenne, ecartType, value);
-        System.out.println(loi2.fonctionLoiNormale());
-
     }
-
-
 }
